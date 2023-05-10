@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /* 
   Crear un componente que muestre un nombre y un boton que diga "cambiar nombre".
@@ -7,16 +7,31 @@ import React from "react";
 */
 
 const EjercicioEstados1 = () => {
-  const nombre = "-nombre-";
+  let nombre = "Otis";
+  const [valor, setValor] = useState(nombre);
+  // const [valorOriginal] = useState(nombre);
 
-  const cambiarNombre = () => {};
+  const cambiarNombre = () => {
+    setValor(valor === nombre ? 'Juan' : nombre);
+  };
+
+  
+//valor === valorOriginal ? setValor('Juan') : setValor(nombre);
+
+//    if (valor === valorOriginal) {
+//       setValor('Juan');
+//     } else {
+//       setValor(nombre);
+//     }
+
 
   return (
     <div>
-      <h1>{nombre}</h1>
-      <button>Cambiar Nombre</button>
+      <h1>{valor}</h1>
+      <button onClick={cambiarNombre}>Cambiar Nombre</button>
     </div>
   );
 };
+
 
 export default EjercicioEstados1;

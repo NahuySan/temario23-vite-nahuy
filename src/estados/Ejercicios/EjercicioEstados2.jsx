@@ -15,18 +15,20 @@ import React, { useState } from "react";
 */
 
 const EjercicioEstados2 = () => {
-  const [] = useState();
+  let valorInicial = 0;
+  const [value, setValue] = useState(valorInicial);
 
-  const sumar = () => {};
-  const restar = () => {};
-  const resetear = () => {};
+
+  const sumar = () => setValue(value+1);
+  const restar = () => setValue(value-1);
+  const resetear = () => setValue(valorInicial);
 
   return (
     <div>
-      <h1>valor</h1>
+      <h1>{value}</h1>
       <button onClick={sumar}>Sumar</button>
-      <button>Restar</button>
-      <button>Resetear</button>
+      <button onClick={restar}>Restar</button>
+      <button onClick={resetear}>Resetear</button>
     </div>
   );
 };

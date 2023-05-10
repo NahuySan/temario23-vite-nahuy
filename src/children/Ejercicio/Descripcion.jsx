@@ -1,9 +1,9 @@
 import React from "react";
 
-const Descripcion = () => {
+const Descripcion = (props) => {
   return (
     <div>
-      <h5>descripcion</h5>
+      <h5>{props.texto}</h5>
     </div>
   );
 };

@@ -14,9 +14,16 @@ const EjercicioEfectos2 = () => {
     setPosition({ x, y });
   };
 
+  useEffect(()=>{
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+    window.removeEventListener('mousemove', handleMouseMove)
+    }; 
+  })
+
   return (
     <div>
-      <h3>{`Posición del mouse: `}</h3>
+      <h3>{`Posición del mouse: ${position.x}, ${position.y} `}</h3>
     </div>
   );
 };

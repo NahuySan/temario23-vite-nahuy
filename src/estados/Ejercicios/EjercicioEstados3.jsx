@@ -16,14 +16,23 @@ import React, { useState } from "react";
 const nombres = ["Juan", "Nico", "Pedro", "Maria", "Jose"];
 
 const EjercicioEstados3 = () => {
-  const [] = useState(nombres[0]);
 
-  const cambiarNombre = () => {};
+  const [nombre, setNombre] = useState(nombres[0]);
+  const [indice, setIndice] = useState(0);
+
+  const cambiarNombre = () => {
+
+    const nuevoIndice = indice + 1;
+
+    setNombre(nombres[nuevoIndice]),
+    setIndice(nuevoIndice);
+  
+  };
 
   return (
     <div>
-      <h1>{}</h1>
-      <button onClick={() => {}}>Cambiar Nombre</button>
+      <h1>{nombre}</h1>
+      {indice === nombres.length - 1 ? null : <button onClick={cambiarNombre}>Cambiar Nombre</button>}
     </div>
   );
 };

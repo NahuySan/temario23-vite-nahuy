@@ -1,11 +1,11 @@
 import React from "react";
 import Nombre from "./Nombre";
 
-const Hola = ({ children }) => {
+const Hola = (props) => {
   return (
     <div>
       <h1>hola</h1>
-      {children}
+      {props.children}
     </div>
   );
 };

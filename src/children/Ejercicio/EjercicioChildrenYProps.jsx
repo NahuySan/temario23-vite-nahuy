@@ -1,7 +1,22 @@
 import React from "react";
 
 /* 
+const Card = () => {
+  return (
+    <div>
+      <h1>Card</h1>
+      <Descripcion texto="que onda"></Descripcion>
+      
+    </div>
+  )
+}
 
+const Descripcion = (props) => {
+  return (
+    <p>{props.texto}</p>
+
+  )
+}
     !NIVEL 1
 
     -Debe crear un componente Card que reciba un titulo y un children.

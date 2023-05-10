@@ -80,10 +80,37 @@ const obetenerUsuarioPorApellido = (apellido) => {
   return draft;
 };
 
-const crearUsuario = () => {};
-const obtenerUsuarioPorId = () => {};
-const eliminarUsuarioPorId = () => {};
-const actualizarUsuarioPorId = () => {};
+const crearUsuario = () => {
+  const nuevoUsuario = estado.push({
+    id: 4,
+    nombre: 'Nahuel',
+    apellido: 'Sanchez'
+  });
+  const draft = structuredClone(nuevoUsuario)
+  return draft;
+};
+const obtenerUsuarioPorId = (userId) => {
+  const usuarioId = estado.find((id)=> {
+    return userId === id
+  });
+  return usuarioId
+};
+const eliminarUsuarioPorId = (userId) => {
+  const deleted = estado.filter(id => id !== userId) 
+  return deleted;
+};
+
+
+
+const actualizarUsuarioPorId = (userId) => {
+  const nuevoNombre = 'Marta';
+  const nuevoApellido = 'Gutierrez'
+
+  const encontrarUsuarioPorId = estado.find(usuario => usuario.id === userId);
+
+  estado[encontrarUsuarioPorId].nombre = nuevoNombre;
+  estado[encontrarUsuarioPorId].apellido = nuevoApellido;  
+};
 
 const MapFilterFind = () => {
   return <div>MapFilterFind</div>;
